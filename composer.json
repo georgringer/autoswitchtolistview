@@ -1,0 +1,9 @@
+{
+	"name": "georgringer/autoswitchtolistview",
+	"version": "0.0.4",
+	"description": "Autoswitch to list view",
+	"type": "typo3-cms-extension",
+	"replace": {
+		"autoswitchtolistview": "*"
+	}
+}
