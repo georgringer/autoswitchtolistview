@@ -1,9 +1,32 @@
 {
 	"name": "georgringer/autoswitchtolistview",
-	"version": "0.0.4",
-	"description": "Autoswitch to list view",
 	"type": "typo3-cms-extension",
+	"description": "Switch page module to list module if sys folder is selected",
+	"license": [
+		"GPL-2.0+"
+	],
+	"keywords": [
+		"TYPO3",
+		"extension"
+	],
+	"homepage": "http://ringer.it",
+	"authors": [
+		{
+			"name": "Georg Ringer",
+			"role": "Developer",
+			"homepage": "http://ringer.it"
+		}
+	],
+	"require": {
+		"typo3/cms-core": ">=7.6.0,<8.9.99"
+	},
+	"autoload": {
+		"psr-4": {
+			"GeorgRinger\\Autoswitchlistview\\": "Classes"
+		}
+	},
 	"replace": {
-		"autoswitchtolistview": "*"
+		"algolia": "self.version",
+		"typo3-ter/autoswitchtolistview": "self.version"
 	}
 }
