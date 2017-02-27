@@ -26,7 +26,7 @@
 		}
 	},
 	"replace": {
-		"algolia": "self.version",
+		"autoswitchtolistview": "self.version",
 		"typo3-ter/autoswitchtolistview": "self.version"
 	}
 }
