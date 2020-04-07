@@ -5,7 +5,6 @@ namespace GeorgRinger\Autoswitchlistview\Hooks;
 use TYPO3\CMS\Backend\Module\ModuleLoader;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\Page\PageRepository;
 
 class PageLayoutControllerHook
 {
@@ -20,7 +19,12 @@ class PageLayoutControllerHook
         $out = '';
 
         // If doktype is type sysfolder
-        if ($parentObject->pageinfo['doktype'] === PageRepository::DOKTYPE_SYSFOLDER) {
+        if (class_exists(TYPO3\CMS\Core\Domain\Repository\PageRepository::class)) {
+            $doktypeSysfolder = \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SYSFOLDER;
+        } else {
+            $doktypeSysfolder = \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_SYSFOLDER;
+        }
+        if ($parentObject->pageinfo['doktype'] === $doktypeSysfolder) {
             $moduleLoader = GeneralUtility::makeInstance(ModuleLoader::class);
             $moduleLoader->load($GLOBALS['TBE_MODULES']);
             $modules = $moduleLoader->modules;
