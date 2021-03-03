@@ -25,5 +25,10 @@
 	},
 	"replace": {
 		"typo3-ter/autoswitchtolistview": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "autoswitchtolistview"
+		}
 	}
 }
