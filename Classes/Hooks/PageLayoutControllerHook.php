@@ -19,7 +19,7 @@ class PageLayoutControllerHook
         $out = '';
 
         // If doktype is type sysfolder
-        if (class_exists(TYPO3\CMS\Core\Domain\Repository\PageRepository::class)) {
+        if (class_exists(\TYPO3\CMS\Core\Domain\Repository\PageRepository::class)) {
             $doktypeSysfolder = \TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_SYSFOLDER;
         } else {
             $doktypeSysfolder = \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_SYSFOLDER;
