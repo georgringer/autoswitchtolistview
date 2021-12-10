@@ -4,7 +4,7 @@ Whenever you are in the page module and clicking on a sys folder in the page tre
 
 **Requirements**
 
-- TYPO3 7.6+
+- TYPO3 7,8,9,10,11
 - GPL2
 
 ## Installation
