@@ -1,5 +1,5 @@
-GeorgRinger\Autoswitchlistview\EventListener\ChangeBeViewEventListener:
-  tags:
-    - name: event.listener
-      identifier: 'GeorgRinger\Autoswitchlistview\EventListener\ChangeBeViewEventListener'
-      event: TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
