@@ -25,8 +25,6 @@ class ChangeToListViewMiddleware implements MiddlewareInterface
 
         if ($this->checkPage($id) && $this->checkRoute($request->getUri()->getPath())) {
 
-            \TYPO3\CMS\Core\Utility\DebugUtility::debug($GLOBALS);
-            die;
             $backendUriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
             /** @var \TYPO3\CMS\Core\Http\Uri $uri */
             $uri = $backendUriBuilder->buildUriFromRoute('web_list', ['id' => $id]);
