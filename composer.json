@@ -7,17 +7,16 @@
 		"TYPO3",
 		"extension"
 	],
-	"homepage": "http://ringer.it",
+	"homepage": "https://ringer.it",
 	"authors": [
 		{
 			"name": "Georg Ringer",
 			"role": "Developer",
-			"homepage": "http://ringer.it"
+			"homepage": "https://ringer.it"
 		}
 	],
 	"require": {
-		"php": "^5.5.0 || ^7.0 || ^8.0",
-		"typo3/cms-core": ">=7.6.0,<11.5.99"
+		"typo3/cms-core": ">=7.6.0,<12.5.99"
 	},
 	"autoload": {
 		"psr-4": {

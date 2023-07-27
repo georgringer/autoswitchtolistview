@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  GeorgRinger\Autoswitchlistview\:
+    resource: '../Classes/*'
+
+  GeorgRinger\Autoswitchlistview\EventListener\PageModuleListener:
+    tags:
+      - name: event.listener
+        identifier: 'autoswitchtolistview/modify-page-module-content'
