@@ -16,15 +16,12 @@
 		}
 	],
 	"require": {
-		"typo3/cms-core": "^12"
+		"typo3/cms-core": "^12.4 || 13.4"
 	},
 	"autoload": {
 		"psr-4": {
 			"GeorgRinger\\Autoswitchlistview\\": "Classes"
 		}
-	},
-	"replace": {
-		"typo3-ter/autoswitchtolistview": "self.version"
 	},
 	"extra": {
 		"typo3/cms": {
