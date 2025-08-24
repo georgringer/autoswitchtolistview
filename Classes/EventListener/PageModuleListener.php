@@ -19,11 +19,14 @@ class PageModuleListener
         $doktypeSysfolder = PageRepository::DOKTYPE_SYSFOLDER;
 
         if ($pageRecord && $pageRecord['doktype'] === $doktypeSysfolder && $event->getRequest()->getUri()->getPath() === '/typo3/module/web/layout') {
-            $uri = $event->getRequest()->getUri()->withPath('/typo3/module/web/list');
-            $event->setFooterContent(sprintf('<span id="autoswitchtolistview" data-uri="%s" data-pageid="%s"></span>', (string)$uri, $pageId));
+            $tsconfig = BackendUtility::getPagesTSconfig($pageId);
+            if (!(isset($tsconfig['autoswitchtolistview.']) && isset($tsconfig['autoswitchtolistview.']['disable']) && $tsconfig['autoswitchtolistview.']['disable'] == 1)) {
+                $uri = $event->getRequest()->getUri()->withPath('/typo3/module/web/list');
+                $event->setFooterContent(sprintf('<span id="autoswitchtolistview" data-uri="%s" data-pageid="%s"></span>', (string)$uri, $pageId));
 
-            $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-            $pageRenderer->loadJavaScriptModule('@georgringer/autoswitchtolistview/switch.js');
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+                $pageRenderer->loadJavaScriptModule('@georgringer/autoswitchtolistview/switch.js');
+            }
         }
     }
 }
