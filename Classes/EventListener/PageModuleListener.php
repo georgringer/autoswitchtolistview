@@ -7,6 +7,7 @@ use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class PageModuleListener
@@ -19,6 +20,9 @@ class PageModuleListener
         $doktypeSysfolder = PageRepository::DOKTYPE_SYSFOLDER;
 
         if ($pageRecord && $pageRecord['doktype'] === $doktypeSysfolder && $event->getRequest()->getUri()->getPath() === '/typo3/module/web/layout') {
+            if (ExtensionManagementUtility::isLoaded('news_content_elements') && isset($event->getRequest()->getQueryParams()['tx_news_id'])) {
+                return;
+            }
             $tsconfig = BackendUtility::getPagesTSconfig($pageId);
             if (!(isset($tsconfig['autoswitchtolistview.']) && isset($tsconfig['autoswitchtolistview.']['disable']) && $tsconfig['autoswitchtolistview.']['disable'] == 1)) {
                 $uri = $event->getRequest()->getUri()->withPath('/typo3/module/web/list');
