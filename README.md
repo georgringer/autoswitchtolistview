@@ -5,7 +5,6 @@ Whenever you are in the page module and clicking on a sys folder in the page tre
 **Requirements**
 
 - TYPO3 12 (use 3.x) and older versions use version 2.x
-- GPL2
 
 ## Installation
 

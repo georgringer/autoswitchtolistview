@@ -6,6 +6,7 @@ namespace GeorgRinger\Autoswitchlistview\EventListener;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -25,7 +26,9 @@ class PageModuleListener
             }
             $tsconfig = BackendUtility::getPagesTSconfig($pageId);
             if (!(isset($tsconfig['autoswitchtolistview.']) && isset($tsconfig['autoswitchtolistview.']['disable']) && $tsconfig['autoswitchtolistview.']['disable'] == 1)) {
-                $uri = $event->getRequest()->getUri()->withPath('/typo3/module/web/list');
+                $path = (new Typo3Version()->getMajorVersion() > 13) ? '/typo3/module/content/records' : '/typo3/module/web/list';
+
+                $uri = $event->getRequest()->getUri()->withPath($path);
                 $event->setFooterContent(sprintf('<span id="autoswitchtolistview" data-uri="%s" data-pageid="%s"></span>', (string)$uri, $pageId));
 
                 $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
