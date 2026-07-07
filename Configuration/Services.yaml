@@ -11,3 +11,8 @@ services:
     tags:
       - name: event.listener
         identifier: 'autoswitchtolistview/modify-page-module-content'
+
+  GeorgRinger\Autoswitchlistview\EventListener\RecordListListener:
+    tags:
+      - name: event.listener
+        identifier: 'autoswitchtolistview/record-list-additional-content'
