@@ -1,4 +1,4 @@
-const el = document.getElementById('autoswitchtolistview');
-if (el && el.dataset.uri) {
-  parent.location.href = el.dataset.uri;
+const trigger = document.getElementById('autoswitchtolistview');
+if (trigger && trigger.dataset.module) {
+  top.TYPO3.ModuleMenu.App.showModule(trigger.dataset.module, `id=${trigger.dataset.pageId}`);
 }
