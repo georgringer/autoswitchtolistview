@@ -1,0 +1,2 @@
+# cat=basic//; type=options[Switch immediately=switch,Ask every time=ask,Ask once per folder and remember the decision=askOnce]; label=Mode: How to behave when a folder is opened in the page module
+mode = switch
