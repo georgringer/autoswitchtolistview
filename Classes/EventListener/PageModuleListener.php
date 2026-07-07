@@ -26,10 +26,9 @@ class PageModuleListener
             }
             $tsconfig = BackendUtility::getPagesTSconfig($pageId);
             if (!(isset($tsconfig['autoswitchtolistview.']) && isset($tsconfig['autoswitchtolistview.']['disable']) && $tsconfig['autoswitchtolistview.']['disable'] == 1)) {
-                $path = ((new Typo3Version())->getMajorVersion() > 13) ? '/typo3/module/content/records' : '/typo3/module/web/list';
+                $moduleIdentifier = ((new Typo3Version())->getMajorVersion() > 13) ? 'records' : 'web_list';
 
-                $uri = $event->getRequest()->getUri()->withPath($path);
-                $event->setFooterContent(sprintf('<span id="autoswitchtolistview" data-uri="%s" data-pageid="%s"></span>', (string)$uri, $pageId));
+                $event->setFooterContent(sprintf('<span id="autoswitchtolistview" data-module="%s" data-page-id="%d"></span>', $moduleIdentifier, $pageId));
 
                 $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $pageRenderer->loadJavaScriptModule('@georgringer/autoswitchtolistview/switch.js');
