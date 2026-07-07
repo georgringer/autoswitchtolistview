@@ -15,3 +15,16 @@ Whenever you are in the page module and clicking on a sys folder in the page tre
 
 You can disable the behaviour by using the following code in Page TsConfig: `autoswitchtolistview.disable = 1`
 
+The extension configuration (*Admin Tools > Settings > Extension Configuration > autoswitchtolistview*) offers a
+`mode` setting with three options:
+
+- **Switch immediately** (default): switch to the list module without asking.
+- **Ask every time**: a confirmation modal is shown on every visit of a folder.
+- **Ask once per folder and remember the decision**: the modal is shown once per folder, the decision is stored in
+  the backend user settings and applied automatically on the next visit.
+
+Whenever a folder is opened in the list module automatically, a small hint is shown below the record list. It offers
+"Open page module once" to view the page module of the folder without changing anything, and — with a remembered
+decision — "Forget this decision" to be asked again. If you decided to stay in the page module, the same kind of
+hint is shown there to revert that decision.
+

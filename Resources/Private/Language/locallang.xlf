@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:autoswitchtolistview/Resources/Private/Language/locallang.xlf" product-name="autoswitchtolistview">
+		<header/>
+		<body>
+			<trans-unit id="modal.title" resname="modal.title">
+				<source>Switch to list module?</source>
+			</trans-unit>
+			<trans-unit id="modal.message" resname="modal.message">
+				<source>The folder "%s" is usually displayed in the list module. Do you want to switch now?</source>
+			</trans-unit>
+			<trans-unit id="modal.rememberHint" resname="modal.rememberHint">
+				<source>Your decision will be remembered for this folder.</source>
+			</trans-unit>
+			<trans-unit id="modal.cancel" resname="modal.cancel">
+				<source>Stay in page module</source>
+			</trans-unit>
+			<trans-unit id="modal.switch" resname="modal.switch">
+				<source>Switch to list module</source>
+			</trans-unit>
+			<trans-unit id="hint.stay.message" resname="hint.stay.message">
+				<source>The automatic switch to the list module is disabled for this folder.</source>
+			</trans-unit>
+			<trans-unit id="hint.list.message" resname="hint.list.message">
+				<source>This folder is opened in the list module automatically.</source>
+			</trans-unit>
+			<trans-unit id="hint.openPageModule" resname="hint.openPageModule">
+				<source>Open page module once</source>
+			</trans-unit>
+			<trans-unit id="hint.forget" resname="hint.forget">
+				<source>Forget this decision</source>
+			</trans-unit>
+			<trans-unit id="hint.notification.title" resname="hint.notification.title">
+				<source>Decision removed</source>
+			</trans-unit>
+			<trans-unit id="hint.notification.message" resname="hint.notification.message">
+				<source>You will be asked again the next time you open this folder in the page module.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
